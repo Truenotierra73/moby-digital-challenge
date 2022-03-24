@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "moby-digital-test:build:production",
+            "firebaseProject": "mobydigitaltest-75019",
+            "firebaseHostingSite": "mobydigitaltest-75019"
+          }
         }
       }
     }

@@ -15,5 +15,5 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [],
 })
-export class LoginRoutingModule {
+export class AuthRoutingModule {
 }

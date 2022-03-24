@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mobydigitaltest-75019": {
+      "hosting": {
+        "moby-digital-test": [
+          "mobydigitaltest-75019"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mobydigitaltest-75019"
+  }
+}
