@@ -17,8 +17,18 @@ export class AuthService {
     private auth: AngularFireAuth
   ) { }
 
+  register() {
+    // TODO: Hacer registro
+  }
+
   login(user: User): Observable<UserCredential> {
     const promise = this.auth.signInWithEmailAndPassword(user.email, user.password);
+
+    return from(promise);
+  }
+
+  signOut(): Observable<void> {
+    const promise = this.auth.signOut();
 
     return from(promise);
   }
