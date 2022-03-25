@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { CoreModule } from './core/core.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +28,8 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    CoreModule
   ],
   providers: [
     { provide: PERSISTENCE, useValue: 'session' },

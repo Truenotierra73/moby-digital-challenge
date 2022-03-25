@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AuthRoutingModule } from './auth-routing.module';
 
-import { LoginComponent } from './pages/login.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
