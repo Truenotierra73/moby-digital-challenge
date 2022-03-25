@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import firebase from 'firebase/compat';
 
-import { AuthService } from '../services/auth.service';
-
+import { AuthService } from '../../services/auth.service';
 import AuthError = firebase.auth.AuthError;
 import UserCredential = firebase.auth.UserCredential;
 
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
+    private router: Router,
     private authService: AuthService
   ) {
   }
@@ -31,9 +32,10 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(user).subscribe({
       next: (res: UserCredential) => {
-        console.log(res.user);
+        this.router.navigate(['/gifs/list']);
       },
       error: (err: AuthError) => {
+        // TODO: Manejo de errores mostrando modales con mensajes
         console.log(err.code);
       }
     });
