@@ -8,5 +8,9 @@ export const environment = {
     authDomain: 'mobydigitaltest-75019.firebaseapp.com',
     messagingSenderId: '316937901291',
   },
+  giphy: {
+    apiKey: '54ktqLmonn7ejAUACxhz3AGOSGL5Ss4D',
+    apiURL: 'https://api.giphy.com/v1/gifs'
+  },
   production: true
 };
