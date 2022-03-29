@@ -1,11 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 
 import { HttpResponse } from '../../shared/interfaces/http-response.interface';
+import { GIF } from '../interfaces/gif.interface';
 import { Language } from '../interfaces/language.interface';
 
 const { giphy } = environment;
@@ -131,6 +132,15 @@ export class GifService {
     if (lang) {
       params = params.append('lang', lang);
     }
+
+    return this.http.get<HttpResponse>(this.url, { params });
+  }
+
+  getById(id: string): Observable<HttpResponse> {
+    this.url = `${giphy.apiURL}/${id}`;
+
+    const params = new HttpParams()
+      .append('api_key', giphy.apiKey);
 
     return this.http.get<HttpResponse>(this.url, { params });
   }

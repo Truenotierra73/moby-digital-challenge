@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 
 import { FileSaverModule } from 'ngx-filesaver';
 
@@ -36,7 +37,8 @@ import { GifsListComponent } from './gifs-list.component';
     MatSelectModule,
     MatMenuModule,
     MatTooltipModule,
-    FileSaverModule
+    FileSaverModule,
+    RouterModule
   ]
 })
 export class GifsListModule { }

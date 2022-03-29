@@ -70,7 +70,7 @@
       </mat-card-title-group>
       <img mat-card-image [src]="gif.images?.downsized?.url" alt="{{ gif.title }}">
       <mat-card-actions>
-        <button mat-button>VER</button>
+        <a mat-button [routerLink]="['..', gif.id, 'detail']">VER</a>
       </mat-card-actions>
     </mat-card>
   </div>
