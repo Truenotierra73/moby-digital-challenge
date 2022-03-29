@@ -12,6 +12,9 @@
       <mat-form-field *ngIf="query?.value" appearance="outline">
         <mat-label>Límite</mat-label>
         <input matInput type="number" formControlName="limit">
+        <mat-error *ngIf="limit?.invalid">
+          {{ getLimitErrorMessage() }}
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field *ngIf="query?.value" appearance="outline">
@@ -36,7 +39,7 @@
     </div>
 
     <div class="mui-row">
-      <button mat-button (click)="search()" [disabled]="!query?.value">Buscar</button>
+      <button mat-button (click)="search()" [disabled]="!query?.value || gifSearchForm.invalid">Buscar</button>
       <button mat-button (click)="clear()" [disabled]="!query?.value">
         <mat-icon>delete</mat-icon>
         Limpiar

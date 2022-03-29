@@ -79,10 +79,22 @@ export class GifsListComponent implements OnInit {
     return this.gifSearchForm.get('language');
   }
 
+  getLimitErrorMessage() {
+    if (this.limit?.hasError('min') || this.limit?.hasError('max')) {
+      return 'Debe ingresar un número entre 0 y 50';
+    }
+
+    if (this.limit?.hasError('pattern')) {
+      return 'Debe ingresar número enteros';
+    }
+
+    return '';
+  }
+
   private createSearchForm() {
     this.gifSearchForm = new FormGroup({
       query: new FormControl(null),
-      limit: new FormControl(null),
+      limit: new FormControl(null, [Validators.pattern('[0-9]*'), Validators.min(0), Validators.max(50)]),
       raiting: new FormControl(null),
       language: new FormControl(null)
     });
