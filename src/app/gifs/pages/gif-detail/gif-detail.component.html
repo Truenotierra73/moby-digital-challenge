@@ -1,12 +1,12 @@
 <app-header></app-header>
 
-<div class="mui-container-fluid">
+<div class="container">
   <div *ngIf="gif">
     <mat-card class="card">
       <img mat-card-image [src]="gif.images?.downsized?.url" alt="{{ gif.title }}">
       <mat-card-actions>
         <button mat-icon-button>
-          <mat-icon>favorite_border</mat-icon>
+          <mat-icon #favoriteIcon>favorite_border</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>
